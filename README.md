@@ -1,2 +1,1 @@
-# restaurant-page
-Restaurant page project
+# Restaurant page project
