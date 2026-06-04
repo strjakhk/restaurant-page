@@ -1,15 +1,13 @@
-import { HomeContent as home } from "./content.js";
-
-const renderHome = () => {
+const createHome = () => {
     const homeElem = document.createElement("div");
     homeElem.classList.add("section-home");
     homeElem.innerHTML = `
-        <p>${home.firstPTexte}</p>
-        <h1>${home.mainH1Text}</h1>
-        <p>${home.secondPText}</p>
-        <p>${home.mainPhrase}</p>
+        <p>A cup of coffee, a great moment of peace</p>
+        <h1>Coffee bar strack</h1>
+        <p>Coffee bar, here and out</p>
+        <p>We offer the best coffee you can get, a small cup, a great moment in your life. A brief moment in here became a lovely memory forever.</p>
     `;
-    document.querySelector("#content").replaceChildren(homeElem);
+    return homeElem;
 }
 
-export default renderHome;
+export default createHome;

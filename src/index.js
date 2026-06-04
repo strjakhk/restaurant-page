@@ -1,22 +1,33 @@
 import "./css/style.css";
 
-import renderHeader from "./modules/header.js";
+import header from './modules/header.js';
+import contact from './modules/contact.js';
+import home from './modules/home.js';
+import menu from './modules/menu.js';
 
+function loadPage(page){
+    const contentElem = document.querySelector('#content');
+    contentElem.innerHTML = '';
+    contentElem.appendChild(page);
+}
 
-import home from "./modules/home.js";
-import menu from "./modules/menu.js";
-import about from "./modules/about.js";
+// render header and home page
 
-const loadPage = { home, menu, about };
+document.querySelector("#menu-nav")
+.appendChild(header());
 
-// render header & home
-renderHeader();
-loadPage.home();
+loadPage(home());
 
-// set event listeners for menu items
+// set event listeners
 
-document.querySelector(".menu").addEventListener("click", e => {
-    if (!e.target.closest("button")) return;
+const pages = { contact, home, menu, };
 
-    loadPage[e.target.dataset.section]();
+document.querySelector('.menu').addEventListener("click", e => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+
+    const section = btn.dataset.section;
+    if (!Object.keys(pages).includes(section)) return;
+
+    loadPage(pages[section]());
 });

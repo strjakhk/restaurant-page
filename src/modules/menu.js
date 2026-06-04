@@ -1,10 +1,10 @@
-const renderMenu = () => {
+const createMenu = () => {
     const menuElem = document.createElement("div");
     menuElem.classList.add("section-menu");
     menuElem.innerHTML = `
         <p>menu</p>
     `;
-    document.querySelector("#content").replaceChildren(menuElem);
+    return menuElem;
 }
 
-export default renderMenu;
+export default createMenu;

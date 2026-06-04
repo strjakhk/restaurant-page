@@ -1,26 +1,24 @@
-import { HeaderContent as header } from "./content.js";
-
-const renderHeader = () =>{
+const createHeader = () =>{
     const menuElem = document.createElement("div");
     menuElem.classList.add("header");
     menuElem.innerHTML = `
         <div class="logo-text">
-            <h1>${header.logoText}</h1>
+            <h1>Coffee bar strack</h1>
         </div>
         <div class="menu">
             <nav>
                 <ul>
-                    <li><button data-section="home">${header.menuItem1}</button></li>
-                    <li><button data-section="menu">${header.menuItem2}</button></li>
-                    <li><button data-section="about">${header.menuItem3}</button></li>
+                    <li><button data-section="home">Home</button></li>
+                    <li><button data-section="menu">Menu</button></li>
+                    <li><button data-section="contact">Contact</button></li>
                 </ul>
             </nav>
         </div>
         <div class="contact">
-            <p>${header.contact}</p>
+            <p>+54 11 91223344</p>
         </div>
     `;
-    document.querySelector("#menu-nav").replaceChildren(menuElem);
+    return menuElem;
 }
 
-export default renderHeader;
+export default createHeader;
