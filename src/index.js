@@ -1,9 +1,9 @@
-import "./css/style.css";
+import './global.css';
 
-import header from './modules/header.js';
-import contact from './modules/contact.js';
-import home from './modules/home.js';
-import menu from './modules/menu.js';
+import header from './modules/header/header.js';
+import contact from './modules/contact/contact.js';
+import home from './modules/home/home.js';
+import menu from './modules/menu/menu.js';
 
 function loadPage(page){
     const contentElem = document.querySelector('#content');
